@@ -243,6 +243,6 @@ def scrape_all():
 
 if __name__ == "__main__":
     data = scrape_all()
-    with open(r"C:\Users\Sean\Downloads\Tandoc [BSIT-2A]\COMMISSIONS\WS-GAMESRADAR-TEST\data.json", "w", encoding="utf-8") as f:
+    with open("data.json", "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     print(f"Scraped {len(data)} games. Data saved to data.json")
