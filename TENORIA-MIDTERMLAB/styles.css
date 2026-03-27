@@ -1,0 +1,331 @@
+:root {
+    --bg-primary: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #334155;
+    --accent: #3b82f6;
+    --accent-dark: #2563eb;
+    --accent-glow: rgba(59,130,246,0.2);
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    --transition: all 0.2s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Filters */
+.filters {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.filters label {
+    font-weight: 500;
+    margin-right: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.filters select {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 2rem;
+    border: 1px solid var(--border-light);
+    background: white;
+    cursor: pointer;
+    outline: none;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.filters select:hover,
+.filters select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+/* Games List (vertical) */
+.games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+/* Card styling */
+.card {
+    background: var(--bg-card);
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid var(--border-light);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+}
+
+.card-content {
+    padding: 1.75rem;
+}
+
+/* Genre badge */
+.genre-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+    color: var(--accent-dark);
+    padding: 0.25rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 0.75rem;
+}
+
+/* Game title */
+.card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+/* Game details grid */
+.game-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.game-detail {
+    font-size: 0.9rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.game-detail strong {
+    font-weight: 600;
+    color: var(--text-secondary);
+    min-width: 85px;
+}
+
+/* Articles section */
+.articles-section {
+    margin-top: 1rem;
+    border-top: 1px solid var(--border-light);
+    padding-top: 1rem;
+}
+
+.articles-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.articles-list {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 0.5rem;
+}
+
+.article-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-light);
+    transition: background 0.2s;
+}
+
+.article-item:hover {
+    background: #fafbfc;
+    margin-left: -0.25rem;
+    padding-left: 0.25rem;
+    border-radius: 0.5rem;
+}
+
+.article-title {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    display: block;
+    margin-bottom: 0.4rem;
+}
+
+.article-title:hover {
+    text-decoration: underline;
+    color: var(--accent-dark);
+}
+
+.article-category {
+    display: inline-block;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.2rem 0.6rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.article-publisher::before {
+    content: "✍️ ";
+    font-size: 0.7rem;
+}
+
+.article-date::before {
+    content: "📅 ";
+    font-size: 0.7rem;
+}
+
+/* Game link */
+.game-link {
+    margin-top: 1.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-light);
+    text-align: right;
+}
+
+.game-link a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.game-link a:hover {
+    text-decoration: underline;
+}
+
+/* Scrollbar */
+.articles-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.articles-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.articles-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+/* Loading & no results */
+.loading, .no-results {
+    text-align: center;
+    padding: 4rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    background: var(--bg-card);
+    border-radius: 1.5rem;
+    border: 1px solid var(--border-light);
+}
+
+/* Footer */
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    color: #64748b;
+    border-top: 1px solid var(--border-light);
+    padding-top: 1.5rem;
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .card h3 {
+        font-size: 1.4rem;
+    }
+    
+    .game-details {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .article-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+}
